@@ -1,13 +1,15 @@
 import static java.lang.System.*;
 import java.util.*;
+//to find pairs of ice cream flavors that costs exactly the amount the friends have
 public class Question1 {
     Scanner sc;
     int[] cost;
-    ArrayList<ArrayList<Integer>> pairList;
+    // single letter variables are used for indices or if given in the question
+    ArrayList<ArrayList<Integer>> pairList; // arraylist to store the pairs
     public static void main(String[] arg)
     {
-        Question1 q = new Question1();
-        q.doProcess();
+        Question1 question = new Question1();
+        question.doProcess();
     }
     void doProcess()
     {
@@ -20,6 +22,7 @@ public class Question1 {
         for(int i=0; i<cost.length; i++)
             cost[i] = sc.nextInt();
         pairList = new ArrayList<ArrayList<Integer>>();
+        // try all possible combinations
         for(int i=0; i<cost.length-1; i++)
             for(int j=i+1; j<cost.length; j++)
                 if(cost[i]+cost[j]==m)
