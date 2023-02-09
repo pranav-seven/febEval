@@ -1,13 +1,15 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+    // to find pairs whose sum is divisible by k
 public class Question10 {
+    //single letter variables are used for indices or if given in the question
     int[] array;
     Scanner sc;
-    ArrayList<ArrayList<Integer>> pairList;
+    ArrayList<ArrayList<Integer>> pairList;  //arraylist to store all pairs
     public static void main(String[] arg)
     {
-        Question10 q = new Question10();
-        q.doProcess();
+        Question10 question = new Question10();
+        question.doProcess();
     }
     void doProcess()
     {
@@ -26,6 +28,7 @@ public class Question10 {
     }
     void findPairs(int k)
     {
+        // try all pairs in the array
         for(int i = 0; i<array.length-1; i++)
             for(int j=i+1; j<array.length; j++)
                 if((array[i]+array[j])%k==0)
